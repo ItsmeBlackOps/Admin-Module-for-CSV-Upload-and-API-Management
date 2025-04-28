@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation, Navigate } from 'react-router-dom';
-import { Lock, User } from 'lucide-react';
+import { Lock, User, Info } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { Loader } from '../components/ui/Loader';
 
@@ -32,7 +32,7 @@ export const Login: React.FC = () => {
     if (success) {
       navigate(from, { replace: true });
     } else {
-      setError('Invalid credentials. Try using admin/password');
+      setError('Invalid credentials');
     }
   };
 
@@ -94,10 +94,9 @@ export const Login: React.FC = () => {
                   placeholder="Enter your password"
                 />
               </div>
-              <div className="mt-1 text-xs text-slate-500">
-                Hint: Use admin/password for demo
-              </div>
             </div>
+
+            
 
             <div>
               <button
